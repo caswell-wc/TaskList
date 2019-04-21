@@ -28,3 +28,7 @@ Once this user is created you can login at <your_domain>/login and see the token
 In the documentation folder of this repo, you will find schemas for all endpoints and their responses to help you in
 creating your messages. There is also a Postman export to show you some examples. For the Postman requests to work, you
 will have to update the domain and api_token to match your configuration.
+
+## Automated Tests
+This repo has a full compliment of automated feature and unit tests. These are found in the tests folder. All pull requests
+will need to include additional tests to cover the changes being made.
