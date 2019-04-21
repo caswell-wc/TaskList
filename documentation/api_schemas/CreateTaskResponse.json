@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Create Task Response",
+  "description": "This is the schema of the response you will get from creating a task or tasks.",
+  "type": "array",
+  "items": {
+    "description": "This will contain the array of tasks that were created.",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "The name of the new task.",
+        "type": "string"
+      },
+      "user_id": {
+        "description": "The id of the user the task is assigned to.",
+        "type": "integer"
+      },
+      "parent_id": {
+        "description": "The if of the parent task for the new task. If there is no parent this will be null.",
+        "type": "integer"
+      },
+      "updated_at": {
+        "description": "The date that this task was last updated in YYYY-MM-DD HH:MM:SS format.",
+        "type": "string"
+      },
+      "created_at": {
+        "description": "The date that this task was created in YYYY-MM-DD HH:MM:SS format.",
+        "type": "string"
+      },
+      "id": {
+        "description": "The id of the new task.",
+        "type": "integer"
+      },
+      "user": {
+        "description": "User information for the user assigned to this task.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The id for the user.",
+            "type": "integer"
+          },
+          "name": {
+            "description": "The name of the user.",
+            "type": "string"
+          },
+          "email": {
+            "description": "The email for the user.",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "The date that the user was last updated in YYYY-MM-DD HH:MM:SS format.",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "The date that the user was created in YYYY-MM-DD HH:MM:SS format.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

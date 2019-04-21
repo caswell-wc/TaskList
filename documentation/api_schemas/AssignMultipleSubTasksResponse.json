@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Assign Multiple Sub-Tasks Response",
+  "description": "This is the response you get when assigning multiple tasks as sub-tasks of another task.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The id of the task.",
+      "type": "integer"
+    },
+    "user_id": {
+      "description": "The id of the user assigned to this task.",
+      "type": "integer"
+    },
+    "parent_id": {
+      "description": "The id of the parent task for this task. If this is not a sub-task, it will be null.",
+      "type": "integer"
+    },
+    "name": {
+      "description": "The name of the task.",
+      "type": "string"
+    },
+    "completed_at": {
+      "description": "The date of completion for this task in YYYY-MM-DD HH:MM:SS format. If the task in incomplete, this will be null.",
+      "type": "string"
+    },
+    "created_at": {
+      "description": "The date that this task was created in YYYY-MM-DD HH:MM:SS format.",
+      "type": "string"
+    },
+    "updated_at": {
+      "description": "The date that this task was last updated in YYYY-MM-DD HH:MM:SS format.",
+      "type": "string"
+    },
+    "children": {
+      "description": "This will list the children of the parent task including the new sub-tasks as well as any other sub-tasks that it already had.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The id of the task.",
+            "type": "integer"
+          },
+          "user_id": {
+            "description": "The id of the user assigned to this task.",
+            "type": "integer"
+          },
+          "parent_id": {
+            "description": "The id of the parent task for this task. If this is not a sub-task, it will be null.",
+            "type": "integer"
+          },
+          "name": {
+            "description": "The name of the task.",
+            "type": "string"
+          },
+          "completed_at": {
+            "description": "The date of completion for this task in YYYY-MM-DD HH:MM:SS format. If the task in incomplete, this will be null.",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "The date that this task was created in YYYY-MM-DD HH:MM:SS format.",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "The date that this task was last updated in YYYY-MM-DD HH:MM:SS format.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

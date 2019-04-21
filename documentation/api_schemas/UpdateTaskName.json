@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Update Task Name",
+  "description": "This is the json you would send a patch request to /api/tasks/{task_id} in order to update a task name.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "This has what you want to change the name to.",
+      "type": "string"
+    },
+    "api_token": {
+      "description": "The api token given to the consumer for authentication.",
+      "type": "string"
+    }
+  },
+  "required": ["name", "api_token"]
+}

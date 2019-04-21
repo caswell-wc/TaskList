@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "View Task Response",
+  "description": "This is the response you get when sending a get request to /api/tasks/{task_id}?api_token={your_api_token}",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The id of the task.",
+      "type": "integer"
+    },
+    "user_id": {
+      "description": "The id of the user assigned to this task.",
+      "type": "integer"
+    },
+    "parent_id": {
+      "description": "The id of the parent task for this task. If this is not a sub-task, it will be null.",
+      "type": "integer"
+    },
+    "name": {
+      "description": "The name of the task.",
+      "type": "string"
+    },
+    "completed_at": {
+      "description": "The date of completion for this task in YYYY-MM-DD HH:MM:SS format. If the task in incomplete, this will be null.",
+      "type": "string"
+    },
+    "created_at": {
+      "description": "The date that this task was created in YYYY-MM-DD HH:MM:SS format.",
+      "type": "string"
+    },
+    "updated_at": {
+      "description": "The date that this task was last updated in YYYY-MM-DD HH:MM:SS format.",
+      "type": "string"
+    },
+    "children": {
+      "description": "This will list the children of the task being retrieved with the information for those children.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The id of the task.",
+            "type": "integer"
+          },
+          "user_id": {
+            "description": "The id of the user assigned to this task.",
+            "type": "integer"
+          },
+          "parent_id": {
+            "description": "The id of the parent task for this task. If this is not a sub-task, it will be null.",
+            "type": "integer"
+          },
+          "name": {
+            "description": "The name of the task.",
+            "type": "string"
+          },
+          "completed_at": {
+            "description": "The date of completion for this task in YYYY-MM-DD HH:MM:SS format. If the task in incomplete, this will be null.",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "The date that this task was created in YYYY-MM-DD HH:MM:SS format.",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "The date that this task was last updated in YYYY-MM-DD HH:MM:SS format.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

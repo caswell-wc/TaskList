@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Create Task",
+  "description": "This is the schema you would send through a post to /api/tasks to create a task.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the task.",
+      "type": "string"
+    },
+    "parent_id": {
+      "description": "If this is a sub-task you put the id of its parent here.",
+      "type": "integer"
+    },
+    "tasks": {
+      "description": "If you are creating multiple tasks with one call you would create your list of tasks here instead of using the name and parent_id fields above",
+      "type": "array",
+      "items": {
+        "name": {
+          "description": "The name of the task.",
+          "type": "string"
+        },
+        "parent_id": {
+          "description": "If this is a sub-task you put the id of its parent here.",
+          "type": "integer"
+        }
+      }
+    },
+    "api_token": {
+      "description": "This is the token given to the consumer for authentication.",
+      "type": "string"
+    }
+  },
+  "required": ["name", "api_token"]
+}

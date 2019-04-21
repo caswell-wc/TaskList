@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Assign Multiple Sub-Tasks",
+  "description": "This is the json you would send in a patch request to /api/tasks/move-subtasks in order to move or assign multiple sub-tasks at once.",
+  "type": "object",
+  "properties": {
+    "parent_id": {
+      "description": "This is the id of the task that you are assigning sub-tasks to.",
+      "type": "integer"
+    },
+    "children_ids": {
+      "description": "This is the list of tasks that you are wanting to assign to the parent task.",
+      "type": "array",
+      "items": {
+        "description": "This ids of the tasks that you are assigning to the parent task.",
+        "type": "integer"
+      }
+    },
+    "api_token": {
+      "description": "The token given to the consumer for authentication.",
+      "type": "string"
+    }
+  },
+  "required": ["parent_id", "children_ids", "api_token"]
+}

@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "0db57e2e-9765-4abd-82fa-c3fda443752b",
+		"name": "TaskList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks?api_token=flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"My First Task\",\r\n\t\"api_token\": \"flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa\"\r\n}"
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Single Task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks/1?api_token=flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sub-Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"My First Sub-Task\",\r\n\t\"parent_id\": 1,\r\n\t\"api_token\": \"flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa\"\r\n}"
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task Name",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"My New Name\",\n\t\"api_token\": \"flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa\"\n}"
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks/1",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Task",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks/2/toggle-complete?api_token=flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"2",
+						"toggle-complete"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Multiple Sub-Tasks",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"parent_id\": 1,\n\t\"children_ids\": [4,5],\n\t\"api_token\": \"flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa\"\n}"
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks/move-subtasks",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"move-subtasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Multiple Tasks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"tasks\": [\r\n\t\t{\r\n\t\t\t\"name\": \"First Multi-Task\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"Second Multi-Task\",\r\n\t\t\t\"parent_id\": 2\r\n\t\t}\r\n\t],\r\n\t\"api_token\": \"flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa\"\r\n}"
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "tasklist.test/api/tasks/4?api_token=flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa",
+					"host": [
+						"tasklist",
+						"test"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"4"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "flZO7cVyNV4UTRbaGEi4iyp7F2mLIHlJDW8GlZmqFvcxGnfCCaOG2FqN3OTa"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

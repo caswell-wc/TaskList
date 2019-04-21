@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "List Task Response",
+  "description": "This is the format for the response you get back when sending a get request to /api/tasks.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "The id of the task.",
+        "type": "integer"
+      },
+      "user_id": {
+        "description": "The id of the user assigned to this task.",
+        "type": "integer"
+      },
+      "parent_id": {
+        "description": "The id of the parent task for this task. If this is not a sub-task it will be null.",
+        "type": "integer"
+      },
+      "name": {
+        "description": "The name of the task",
+        "type": "string"
+      },
+      "completed_at": {
+        "description": "The date when the task was completed in YYYY-MM-DD HH:MM:SS format. If the task is not complete, this will be null.",
+        "type": "string"
+      },
+      "created_at": {
+        "description": "The date that this task was created in YYYY-MM-DD HH:MM:SS format.",
+        "type": "string"
+      },
+      "updated_at": {
+        "description": "The date that this task was last updated in YYYY-MM-DD HH:MM:SS format.",
+        "type": "string"
+      }
+    }
+  }
+}
